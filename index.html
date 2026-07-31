@@ -255,4 +255,1100 @@
         .contact-info h3 { font-family: var(--font-serif); font-size: 1.1rem; color: var(--navy); margin-bottom: 1.5rem; font-weight: 600; }
         .contact-info p { color: #666; line-height: 1.7; margin-bottom: 2rem; font-size: 1rem; }
         .contact-detail { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; }
-        .contact-detail-icon { width: 40px; height: 40px; border: 1px solid var(--gold); disp
+        .contact-detail-icon { width: 40px; height: 40px; border: 1px solid var(--gold); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .contact-detail-icon svg { width: 18px; height: 18px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+        .contact-detail-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #999; margin-bottom: 0.2rem; }
+        .contact-detail-value { color: var(--navy); font-weight: 500; font-size: 0.95rem; }
+        .contact-detail-value a { color: var(--navy); text-decoration: none; transition: color 0.3s ease; }
+        .contact-detail-value a:hover { color: var(--gold); }
+        .contact-form { background: var(--navy); padding: clamp(2rem, 3vw, 3rem); }
+        .contact-form h3 { font-family: var(--font-serif); color: var(--cream); font-size: 1.5rem; margin-bottom: 2rem; font-weight: 500; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .form-group { margin-bottom: 1.25rem; }
+        .form-group label { display: block; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--warm-gray); margin-bottom: 0.5rem; }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; background: var(--navy-mid); border: 1px solid rgba(201, 169, 110, 0.15); color: var(--cream); padding: 0.9rem 1rem; font-family: var(--font-sans); font-size: 0.9rem; outline: none; transition: border-color 0.3s ease; }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--gold); }
+        .form-group textarea { height: 120px; resize: vertical; }
+        .form-group select { cursor: pointer; appearance: none; }
+        .form-submit { background: var(--gold); color: var(--navy); border: none; padding: 1rem 2.5rem; font-family: var(--font-sans); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer; transition: all 0.3s ease; width: 100%; }
+        .form-submit:hover { background: var(--gold-light); }
+        .form-note { color: var(--warm-gray); font-size: 0.75rem; margin-top: 1rem; opacity: 0.7; }
+
+        /* Footer */
+        .footer { background: var(--navy); color: var(--cream); padding: 4rem clamp(1.5rem, 4vw, 4rem) 2rem; border-top: 1px solid rgba(201, 169, 110, 0.1); }
+        .footer-inner { max-width: 1200px; margin: 0 auto; }
+        .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(201, 169, 110, 0.1); }
+        .footer-brand { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem; color: var(--cream); }
+        .footer-brand span { color: var(--gold); }
+        .footer-desc { color: var(--warm-gray); font-size: 0.9rem; line-height: 1.7; max-width: 300px; }
+        .footer-col h4 { font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 0.6rem; }
+        .footer-col a { color: var(--warm-gray); text-decoration: none; font-size: 0.85rem; transition: color 0.3s ease; }
+        .footer-col a:hover { color: var(--cream); }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; flex-wrap: wrap; gap: 1rem; }
+        .footer-copy { color: rgba(232, 228, 220, 0.4); font-size: 0.75rem; }
+        .footer-legal { display: flex; gap: 1.5rem; }
+        .footer-legal a { color: rgba(232, 228, 220, 0.4); text-decoration: none; font-size: 0.75rem; transition: color 0.3s ease; }
+        .footer-legal a:hover { color: var(--gold); }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed; bottom: 2rem; right: 2rem; width: 48px; height: 48px;
+            background: var(--navy); border: 1px solid var(--gold); color: var(--gold);
+            display: flex; align-items: center; justify-content: center; cursor: pointer;
+            z-index: 9990; opacity: 0; visibility: hidden; transition: all 0.3s ease;
+        }
+        .back-to-top.visible { opacity: 1; visibility: visible; }
+        .back-to-top:hover { background: var(--gold); color: var(--navy); }
+        .back-to-top svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+        /* ==================== CHAT ==================== */
+
+        .chat-toggle {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: var(--gold);
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 9995;
+            box-shadow: 0 8px 32px rgba(201, 169, 110, 0.35);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+        }
+        .chat-toggle:hover {
+            transform: scale(1.08);
+            box-shadow: 0 12px 40px rgba(201, 169, 110, 0.5);
+        }
+        .chat-toggle.active {
+            transform: scale(0.95);
+            background: var(--navy);
+            border: 1px solid var(--gold);
+        }
+        .chat-toggle-icon { position: absolute; transition: opacity 0.3s ease, transform 0.3s ease; }
+        .chat-toggle-icon.open { opacity: 1; transform: rotate(0deg); }
+        .chat-toggle-icon.close { opacity: 0; transform: rotate(-90deg); }
+        .chat-toggle.active .chat-toggle-icon.open { opacity: 0; transform: rotate(90deg); }
+        .chat-toggle.active .chat-toggle-icon.close { opacity: 1; transform: rotate(0deg); }
+        .chat-toggle-icon svg { width: 26px; height: 26px; }
+        .chat-toggle:not(.active) .chat-toggle-icon svg { stroke: var(--navy); }
+        .chat-toggle.active .chat-toggle-icon svg { stroke: var(--gold); }
+
+        .chat-badge {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            width: 20px;
+            height: 20px;
+            background: #e74c3c;
+            border-radius: 50%;
+            color: white;
+            font-size: 0.65rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: scale(0);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .chat-badge.visible { opacity: 1; transform: scale(1); }
+        .chat-badge::after {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border-radius: 50%;
+            border: 2px solid #e74c3c;
+            animation: badgePulse 2s ease-in-out infinite;
+        }
+        @keyframes badgePulse {
+            0%, 100% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.3); opacity: 0; }
+        }
+
+        /* Chat Panel */
+        .chat-panel {
+            position: fixed;
+            bottom: 6rem;
+            right: 2rem;
+            width: 400px;
+            height: 560px;
+            background: var(--navy);
+            border: 1px solid rgba(201, 169, 110, 0.15);
+            border-radius: 16px;
+            z-index: 9994;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+            transform: translateY(20px) scale(0.95);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transform-origin: bottom right;
+        }
+        .chat-panel.open {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Chat Header */
+        .chat-header {
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            border-bottom: 1px solid rgba(201, 169, 110, 0.1);
+            background: var(--navy-mid);
+        }
+        .chat-avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--gold);
+            color: var(--navy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-serif);
+            font-weight: 700;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+        .chat-header-info { flex: 1; }
+        .chat-header-name {
+            font-family: var(--font-serif);
+            color: var(--cream);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+        .chat-header-status {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.7rem;
+            color: var(--warm-gray);
+            margin-top: 0.15rem;
+        }
+        .chat-status-dot {
+            width: 6px;
+            height: 6px;
+            background: #4ade80;
+            border-radius: 50%;
+            animation: statusPulse 2s ease-in-out infinite;
+        }
+        @keyframes statusPulse {
+            0%, 100% { opacity: 1; } 50% { opacity: 0.4; }
+        }
+
+        /* Chat Messages */
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            scroll-behavior: smooth;
+        }
+        .chat-messages::-webkit-scrollbar { width: 4px; }
+        .chat-messages::-webkit-scrollbar-track { background: transparent; }
+        .chat-messages::-webkit-scrollbar-thumb { background: rgba(201, 169, 110, 0.2); border-radius: 4px; }
+
+        .chat-msg {
+            display: flex;
+            gap: 0.5rem;
+            max-width: 85%;
+            animation: msgSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+        .chat-msg.bot { align-self: flex-start; }
+        .chat-msg.user { align-self: flex-end; flex-direction: row-reverse; }
+        @keyframes msgSlideIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .chat-msg-avatar {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6rem;
+            font-weight: 700;
+            margin-top: 2px;
+        }
+        .chat-msg.bot .chat-msg-avatar { background: var(--gold); color: var(--navy); font-family: var(--font-serif); }
+        .chat-msg.user .chat-msg-avatar { background: var(--navy-light); color: var(--gold); }
+
+        .chat-msg-bubble {
+            padding: 0.75rem 1rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            white-space: pre-line;
+        }
+        .chat-msg.bot .chat-msg-bubble {
+            background: var(--navy-mid);
+            color: var(--cream);
+            border-bottom-left-radius: 4px;
+        }
+        .chat-msg.user .chat-msg-bubble {
+            background: var(--gold);
+            color: var(--navy);
+            border-bottom-right-radius: 4px;
+            font-weight: 500;
+        }
+
+        /* Typing Indicator */
+        .chat-typing {
+            display: flex;
+            gap: 0.5rem;
+            align-self: flex-start;
+            max-width: 85%;
+            animation: msgSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+        .chat-typing-avatar {
+            width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+            background: var(--gold); color: var(--navy); font-family: var(--font-serif);
+            display: flex; align-items: center; justify-content: center; font-size: 0.6rem; font-weight: 700;
+        }
+        .chat-typing-dots {
+            background: var(--navy-mid);
+            border-radius: 12px;
+            border-bottom-left-radius: 4px;
+            padding: 0.75rem 1rem;
+            display: flex;
+            gap: 4px;
+            align-items: center;
+        }
+        .chat-typing-dots span {
+            width: 6px;
+            height: 6px;
+            background: var(--warm-gray);
+            border-radius: 50%;
+            animation: typingBounce 1.4s ease-in-out infinite;
+        }
+        .chat-typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+        .chat-typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes typingBounce {
+            0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+            30% { transform: translateY(-6px); opacity: 1; }
+        }
+
+        /* Quick Replies */
+        .chat-quick-replies {
+            padding: 0 1.25rem 0.75rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+        .chat-quick-btn {
+            background: transparent;
+            border: 1px solid rgba(201, 169, 110, 0.3);
+            color: var(--gold);
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 0.4rem 0.75rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            white-space: nowrap;
+        }
+        .chat-quick-btn:hover {
+            background: var(--gold);
+            color: var(--navy);
+            border-color: var(--gold);
+        }
+
+        /* Chat Input */
+        .chat-input-area {
+            padding: 0.75rem 1.25rem;
+            border-top: 1px solid rgba(201, 169, 110, 0.1);
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            background: var(--navy-mid);
+        }
+        .chat-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: var(--cream);
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            outline: none;
+            padding: 0.5rem 0;
+        }
+        .chat-input::placeholder { color: rgba(184, 176, 164, 0.5); }
+        .chat-send {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--gold);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            flex-shrink: 0;
+        }
+        .chat-send:hover { background: var(--gold-light); transform: scale(1.05); }
+        .chat-send svg { width: 16px; height: 16px; stroke: var(--navy); fill: none; stroke-width: 2; }
+
+        /* Chat Disclaimer */
+        .chat-disclaimer {
+            padding: 0.5rem 1.25rem 0.75rem;
+            font-size: 0.65rem;
+            color: rgba(184, 176, 164, 0.4);
+            text-align: center;
+            line-height: 1.4;
+            background: var(--navy-mid);
+        }
+
+        /* Chat Responsive */
+        @media (max-width: 480px) {
+            .chat-panel {
+                width: calc(100vw - 1.5rem);
+                height: 70vh;
+                right: 0.75rem;
+                bottom: 5rem;
+                border-radius: 12px;
+            }
+            .chat-toggle {
+                width: 52px;
+                height: 52px;
+                bottom: 1.25rem;
+                right: 1.25rem;
+            }
+            .back-to-top { right: 1.25rem; bottom: 1.25rem; }
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .about-grid { grid-template-columns: 1fr; }
+            .about-visual { height: 350px; max-width: 500px; }
+            .practice-grid { grid-template-columns: 1fr 1fr; }
+            .values-grid { grid-template-columns: 1fr 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .footer-top { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .nav { padding: 1rem 1.5rem; }
+            .nav-links, .nav-phone { display: none; }
+            .hamburger { display: block; }
+            .hero { padding: 5rem 1.5rem 3rem; }
+            .hero-watermark { font-size: 5rem; }
+            .practice-header { flex-direction: column; align-items: flex-start; }
+            .practice-grid { grid-template-columns: 1fr; }
+            .values-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .about-stats { flex-direction: column; gap: 1.5rem; }
+            .footer-top { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+            .footer-legal { justify-content: center; }
+            .back-to-top { bottom: 5rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-text" id="loaderText"></div>
+    </div>
+
+    <!-- Grain -->
+    <div class="grain"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <a href="#" class="nav-logo">EIZENGA<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="#about">Over ons</a></li>
+            <li><a href="#practice">Specialisaties</a></li>
+            <li><a href="#values">Aanpak</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="tel:+310343453979" class="nav-phone">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            034 - 34 53 979
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#about">Over ons</a>
+        <a href="#practice">Specialisaties</a>
+        <a href="#values">Aanpak</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+        <div class="hero-watermark">EIZENGA</div>
+        <div class="hero-geo-line hero-geo-line--h"></div>
+        <div class="hero-geo-line hero-geo-line--v"></div>
+        <div class="hero-geo-circle hero-geo-circle--1"></div>
+        <div class="hero-geo-circle hero-geo-circle--2"></div>
+        <div class="hero-content">
+            <div class="hero-label" id="heroLabel">Advocatenkantoor · Sinds 2003</div>
+            <h1 class="hero-heading">
+                <span class="line"><span class="line-inner" id="heroLine1">Samen sta je</span></span>
+                <span class="line"><span class="line-inner" id="heroLine2"><em>sterk</em></span></span>
+            </h1>
+            <div class="hero-divider" id="heroDivider"></div>
+            <p class="hero-sub" id="heroSub">Deskundige rechtshulp zonder poespas tegen schappelijke prijzen. Persoonlijk, toegankelijk en resultaatgericht.</p>
+            <a href="#contact" class="hero-cta" id="heroCta">
+                <span>Neem contact op</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+        <div class="hero-scroll">
+            <span>Scroll</span>
+            <div class="hero-scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="section about" id="about">
+        <div class="about-grid">
+            <div class="about-visual reveal">
+                <div class="about-frame"></div>
+                <div class="about-image-block">
+                    <div class="about-initials">H.E.</div>
+                </div>
+                <div class="about-badge">Sinds 1984<br>actief in de<br>rechtshulp</div>
+            </div>
+            <div class="about-text">
+                <div class="section-label reveal">Het Kantoor</div>
+                <h2 class="section-heading reveal reveal-delay-1">Ervaren advocaat met een <em>persoonlijke</em> aanpak</h2>
+                <p class="reveal reveal-delay-2">Hans (J.J.) Eizenga is sinds 1984 actief in de professionele rechtshulp. Sinds 2003 is hij zelfstandig advocaat. Hij is civielrechtelijk afgestudeerd en was actief bij de rechtswinkel Utrecht en het Bureau voor Rechtshulp 's-Hertogenbosch-Oss.</p>
+                <p class="reveal reveal-delay-3">Daarnaast werkte hij voor de Stichting Rechtsbijstand Asiel en zet hij zich in voor kwetsbare groepen via collectieve acties. Zijn aanpak is eenvoudig: eerlijk advies, heldere communicatie en geen onnodige kosten.</p>
+                <blockquote class="about-quote reveal reveal-delay-3">"Samen sta je sterk — deskundige rechtshulp zonder poespas tegen schappelijke prijzen."</blockquote>
+                <div class="about-stats reveal reveal-delay-4">
+                    <div>
+                        <div class="about-stat-number">40<span>+</span></div>
+                        <div class="about-stat-label">Jaar ervaring</div>
+                    </div>
+                    <div>
+                        <div class="about-stat-number">2003</div>
+                        <div class="about-stat-label">Zelfstandig kantoor</div>
+                    </div>
+                    <div>
+                        <div class="about-stat-number">3</div>
+                        <div class="about-stat-label">Specialisaties</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practice Areas -->
+    <section class="section practice" id="practice">
+        <div class="practice-header">
+            <div>
+                <div class="section-label reveal">Rechtsgebieden</div>
+                <h2 class="section-heading reveal reveal-delay-1">Waar kunnen wij u <em>me.helpen</em>?</h2>
+            </div>
+            <div class="practice-header-text reveal reveal-delay-2">
+                <p>Hans Eizenga staat graag klaar voor zijn cliënten. Met diepgaande kennis en jarenlange ervaring op drie kerngebieden van het recht.</p>
+            </div>
+        </div>
+        <div class="practice-grid">
+            <div class="practice-card reveal">
+                <div class="practice-card-num">01</div>
+                <div class="practice-card-icon">
+                    <svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+                </div>
+                <h3>Arbeidsrecht</h3>
+                <p>Voor al uw vragen over arbeidsovereenkomsten, ontslag, arbeidsvoorwaarden of conflicten op de werkvloer.</p>
+                <ul class="practice-card-list">
+                    <li>Arbeidsovereenkomsten</li>
+                    <li>Ontslag & beëindiging</li>
+                    <li>Arbeidsvoorwaarden</li>
+                    <li>Conflicten op de werkvloer</li>
+                </ul>
+                <a href="#contact" class="practice-card-link">
+                    Meer informatie
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+            <div class="practice-card reveal reveal-delay-1">
+                <div class="practice-card-num">02</div>
+                <div class="practice-card-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                </div>
+                <h3>Asiel- en vreemdelingenrecht</h3>
+                <p>Begeleiding bij asielaanvragen, verblijfsvergunningen, naturalisatie en alle juridische aspecten van migratie.</p>
+                <ul class="practice-card-list">
+                    <li>Asielaanvragen</li>
+                    <li>Verblijfsvergunningen</li>
+                    <li>Naturalisatie</li>
+                    <li>Familiehereniging</li>
+                </ul>
+                <a href="#contact" class="practice-card-link">
+                    Meer informatie
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+            <div class="practice-card reveal reveal-delay-2">
+                <div class="practice-card-num">03</div>
+                <div class="practice-card-icon">
+                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                </div>
+                <h3>Verbintenissenrecht</h3>
+                <p>Bij geschillen over contracten, overeenkomsten, leveringen en andere verbintenisrechtelijke vraagstukken.</p>
+                <ul class="practice-card-list">
+                    <li>Contracten & overeenkomsten</li>
+                    <li>Leveringen & diensten</li>
+                    <li>Wanprestatie</li>
+                    <li>Schadevergoeding</li>
+                </ul>
+                <a href="#contact" class="practice-card-link">
+                    Meer informatie
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee-section">
+        <div class="marquee-track">
+            <div class="marquee-item">Arbeidsrecht <span class="marquee-dot"></span></div>
+            <div class="marquee-item">Asielrecht <span class="marquee-dot"></span></div>
+            <div class="marquee-item">Verbintenissenrecht <span class="marquee-dot"></span></div>
+            <div class="marquee-item">Samen sta je sterk <span class="marquee-dot"></span></div>
+            <div class="marquee-item">Sinds 1984 <span class="marquee-dot"></span></div>
+            <div class="marquee-item">Schappelijke prijzen <span class="marquee-dot"></span></div>
+            <div class="marquee-item">Arbeidsrecht <span class="marquee-dot"></span></div>
+            <div class="marquee-item">Asielrecht <span class="marquee-dot"></span></div>
+            <div class="marquee-item">Verbintenissenrecht <span class="marquee-dot"></span></div>
+            <div class="marquee-item">Samen sta je sterk <span class="marquee-dot"></span></div>
+            <div class="marquee-item">Sinds 1984 <span class="marquee-dot"></span></div>
+            <div class="marquee-item">Schappelijke prijzen <span class="marquee-dot"></span></div>
+        </div>
+    </div>
+
+    <!-- Values -->
+    <section class="section section-dark values" id="values">
+        <div class="values-inner">
+            <div class="section-label reveal">Onze Aanpak</div>
+            <h2 class="section-heading reveal reveal-delay-1">Hoe wij <em>werken</em></h2>
+            <div class="values-grid">
+                <div class="value-cell reveal">
+                    <div class="value-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                    <h3>Persoonlijk</h3>
+                    <p>Direct contact met uw advocaat. Geen wachttijden, geen tussenpersonen. Hans Eizenga begeleidt u persoonlijk van begin tot eind.</p>
+                </div>
+                <div class="value-cell reveal reveal-delay-1">
+                    <div class="value-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                    <h3>Betrouwbaar</h3>
+                    <p>Transparante communicatie over kosten, verloop en kansen. Geen verrassingen achteraf. Eerlijk advies, ook als het lastig is.</p>
+                </div>
+                <div class="value-cell reveal reveal-delay-2">
+                    <div class="value-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+                    <h3>Resultaatgericht</h3>
+                    <p>Focus op het beste resultaat voor uw situatie. Met een duidelijke strategie en jarenlange ervaring in de rechtszaal.</p>
+                </div>
+                <div class="value-cell reveal reveal-delay-1">
+                    <div class="value-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+                    <h3>Toegankelijk</h3>
+                    <p>Deskundige rechtshulp moet bereikbaar zijn. Schappelijke prijzen en geen onnodige poespas. Wij houden het simpel en effectief.</p>
+                </div>
+                <div class="value-cell reveal reveal-delay-2">
+                    <div class="value-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+                    <h3>Communicatief</h3>
+                    <p>Duidelijke taal, geen juridisch jargon. Wij houden u op de hoogte van elke ontwikkeling in uw zaak.</p>
+                </div>
+                <div class="value-cell reveal reveal-delay-3">
+                    <div class="value-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                    <h3>Betrokken</h3>
+                    <p>Zich inzetten voor kwetsbare groepen via collectieve acties. Rechtshulp is geen luxe, het is een recht.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact" id="contact">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="section-label reveal">Contact</div>
+                <h2 class="section-heading reveal reveal-delay-1">Neem <em>contact</em> op</h2>
+                <p class="reveal reveal-delay-2">Wij staan graag voor u klaar. U kunt ons tijdens werkdagen telefonisch bereiken van 9.00 uur tot 18.00 uur.</p>
+                <h3 class="reveal reveal-delay-2">Advocatenkantoor Eizenga</h3>
+                <div class="contact-detail reveal reveal-delay-3">
+                    <div class="contact-detail-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+                    <div>
+                        <div class="contact-detail-label">Telefoon</div>
+                        <div class="contact-detail-value"><a href="tel:+310343453979">+31 (0)34 - 34 53 979</a></div>
+                    </div>
+                </div>
+                <div class="contact-detail reveal reveal-delay-3">
+                    <div class="contact-detail-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+                    <div>
+                        <div class="contact-detail-label">E-mail</div>
+                        <div class="contact-detail-value"><a href="mailto:info@advocaateizenga.nl">info@advocaateizenga.nl</a></div>
+                    </div>
+                </div>
+                <div class="contact-detail reveal reveal-delay-4">
+                    <div class="contact-detail-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                    <div>
+                        <div class="contact-detail-label">Postadres</div>
+                        <div class="contact-detail-value">Postbus 112<br>3958 ZV Amerongen</div>
+                    </div>
+                </div>
+                <div class="contact-detail reveal reveal-delay-4">
+                    <div class="contact-detail-icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="1"/><path d="M22 4L12 13 2 4"/></svg></div>
+                    <div>
+                        <div class="contact-detail-label">Fax</div>
+                        <div class="contact-detail-value">+31 (0)34 - 34 539 78</div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form reveal">
+                <h3>Stuur ons een bericht</h3>
+                <form id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group"><label for="naam">Naam *</label><input type="text" id="naam" name="naam" required></div>
+                        <div class="form-group"><label for="telefoon">Telefoon</label><input type="tel" id="telefoon" name="telefoon"></div>
+                    </div>
+                    <div class="form-group"><label for="email">E-mailadres *</label><input type="email" id="email" name="email" required></div>
+                    <div class="form-group">
+                        <label for="onderwerp">Onderwerp</label>
+                        <select id="onderwerp" name="onderwerp">
+                            <option value="">Selecteer een rechtsgebied</option>
+                            <option value="arbeidsrecht">Arbeidsrecht</option>
+                            <option value="asielrecht">Asiel- en vreemdelingenrecht</option>
+                            <option value="verbintenissenrecht">Verbintenissenrecht</option>
+                            <option value="overig">Overig</option>
+                        </select>
+                    </div>
+                    <div class="form-group"><label for="bericht">Uw bericht *</label><textarea id="bericht" name="bericht" required></textarea></div>
+                    <button type="submit" class="form-submit">Verstuur bericht</button>
+                    <p class="form-note">Wij streven ernaar binnen 1 werkdag te reageren.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div>
+                    <div class="footer-brand">EIZENGA<span>.</span></div>
+                    <p class="footer-desc">Advocatenkantoor Eizenga — deskundige rechtshulp zonder poespas tegen schappelijke prijzen.</p>
+                </div>
+                <div class="footer-col"><h4>Navigatie</h4><ul><li><a href="#about">Over ons</a></li><li><a href="#practice">Specialisaties</a></li><li><a href="#values">Aanpak</a></li><li><a href="#contact">Contact</a></li></ul></div>
+                <div class="footer-col"><h4>Rechtsgebieden</h4><ul><li><a href="#practice">Arbeidsrecht</a></li><li><a href="#practice">Asiel- en vreemdelingenrecht</a></li><li><a href="#practice">Verbintenissenrecht</a></li></ul></div>
+                <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+310343453979">034 - 34 53 979</a></li><li><a href="mailto:info@advocaateizenga.nl">info@advocaateizenga.nl</a></li><li><a href="#">Postbus 112, 3958 ZV Amerongen</a></li></ul></div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copy">© 2025 Advocatenkantoor Eizenga. Alle rechten voorbehouden.</div>
+                <div class="footer-legal"><a href="#">Algemene Voorwaarden</a><a href="#">Klachtenregeling</a><a href="#">Privacyverklaring</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Terug naar boven">
+        <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+
+    <!-- ==================== CHAT ==================== -->
+    <button class="chat-toggle" id="chatToggle" aria-label="Chat met Eizenga">
+        <span class="chat-toggle-icon open">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+        </span>
+        <span class="chat-toggle-icon close">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+        </span>
+        <span class="chat-badge" id="chatBadge">1</span>
+    </button>
+
+    <div class="chat-panel" id="chatPanel" role="dialog" aria-label="Chat assistent">
+        <div class="chat-header">
+            <div class="chat-avatar">HE</div>
+            <div class="chat-header-info">
+                <div class="chat-header-name">Eizenga Assistent</div>
+                <div class="chat-header-status"><span class="chat-status-dot"></span> Online — direct antwoord</div>
+            </div>
+        </div>
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="chat-quick-replies" id="chatQuickReplies"></div>
+        <div class="chat-input-area">
+            <input type="text" class="chat-input" id="chatInput" placeholder="Typ uw vraag..." autocomplete="off">
+            <button class="chat-send" id="chatSend" aria-label="Verstuur">
+                <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+        </div>
+        <div class="chat-disclaimer">Dit is een geautomatiseerde assistent — geen juridisch advies.<br>Neem contact op voor professionele rechtshulp.</div>
+    </div>
+
+    <script>
+        // ==================== CORE PAGE JS ====================
+
+        // Loader
+        const loaderText = document.getElementById('loaderText');
+        const loader = document.getElementById('loader');
+        'EIZENGA'.split('').forEach((letter, i) => {
+            const span = document.createElement('span');
+            span.textContent = letter;
+            span.style.animationDelay = `${i * 0.08}s`;
+            loaderText.appendChild(span);
+        });
+        window.addEventListener('load', () => {
+            setTimeout(() => { loader.classList.add('hidden'); revealHero(); }, 1200);
+        });
+
+        // Hero Reveal
+        function revealHero() {
+            setTimeout(() => document.getElementById('heroLabel').classList.add('revealed'), 200);
+            setTimeout(() => document.getElementById('heroLine1').classList.add('revealed'), 400);
+            setTimeout(() => document.getElementById('heroLine2').classList.add('revealed'), 600);
+            setTimeout(() => document.getElementById('heroDivider').classList.add('revealed'), 800);
+            setTimeout(() => document.getElementById('heroSub').classList.add('revealed'), 900);
+            setTimeout(() => document.getElementById('heroCta').classList.add('revealed'), 1100);
+        }
+
+        // Custom Cursor
+        const dot = document.getElementById('cursorDot');
+        const ring = document.getElementById('cursorRing');
+        let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX; mouseY = e.clientY;
+            dot.style.left = mouseX + 'px'; dot.style.top = mouseY + 'px';
+        });
+        function animateRing() {
+            ringX += (mouseX - ringX) * 0.15;
+            ringY += (mouseY - ringY) * 0.15;
+            ring.style.left = ringX + 'px'; ring.style.top = ringY + 'px';
+            requestAnimationFrame(animateRing);
+        }
+        animateRing();
+        document.querySelectorAll('a, button, input, textarea, select, .practice-card').forEach(el => {
+            el.addEventListener('mouseenter', () => ring.classList.add('hovering'));
+            el.addEventListener('mouseleave', () => ring.classList.remove('hovering'));
+        });
+
+        // Scroll Progress
+        const scrollProgress = document.getElementById('scrollProgress');
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            scrollProgress.style.width = (scrollTop / docHeight * 100) + '%';
+        });
+
+        // Nav scroll effect
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 50); });
+
+        // Mobile Menu
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        hamburger.addEventListener('click', () => { hamburger.classList.toggle('active'); mobileMenu.classList.toggle('active'); });
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => { hamburger.classList.remove('active'); mobileMenu.classList.remove('active'); });
+        });
+
+        // Scroll Reveal
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); revealObserver.unobserve(entry.target); } });
+        }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // Back to Top
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => { backToTop.classList.toggle('visible', window.scrollY > 600); });
+        backToTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+        // Contact Form
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('.form-submit');
+            btn.textContent = 'Verzonden ✓'; btn.style.background = '#2d8a4e'; btn.style.color = '#fff';
+            setTimeout(() => { btn.textContent = 'Verstuur bericht'; btn.style.background = ''; btn.style.color = ''; e.target.reset(); }, 3000);
+        });
+
+        // ==================== CHAT ENGINE ====================
+
+        const chatToggle = document.getElementById('chatToggle');
+        const chatPanel = document.getElementById('chatPanel');
+        const chatBadge = document.getElementById('chatBadge');
+        const chatMessages = document.getElementById('chatMessages');
+        const chatQuickReplies = document.getElementById('chatQuickReplies');
+        const chatInput = document.getElementById('chatInput');
+        const chatSend = document.getElementById('chatSend');
+
+        let chatOpen = false;
+        let chatInitialized = false;
+
+        // Show badge after 3s
+        setTimeout(() => { chatBadge.classList.add('visible'); }, 3000);
+
+        // Toggle chat
+        chatToggle.addEventListener('click', () => {
+            chatOpen = !chatOpen;
+            chatPanel.classList.toggle('open', chatOpen);
+            chatToggle.classList.toggle('active', chatOpen);
+            chatBadge.classList.remove('visible');
+
+            if (!chatInitialized) {
+                chatInitialized = true;
+                setTimeout(() => {
+                    addBotMessage('Goedendag! 👋 Welkom bij Advocatenkantoor Eizenga. Ik kan u helpen met vragen over onze rechtsgebieden, contactgegevens en werkwijze.\n\nWaar kan ik u mee helpen?');
+                    showQuickReplies(['Arbeidsrecht', 'Asielrecht', 'Verbintenissenrecht', 'Contactgegevens', 'Openingstijden']);
+                }, 400);
+            }
+
+            if (chatOpen) {
+                setTimeout(() => chatInput.focus(), 400);
+            }
+        });
+
+        // Knowledge base
+        const knowledgeBase = [
+            {
+                id: 'arbeidsrecht',
+                keywords: ['arbeidsrecht', 'arbeid', 'ontslag', 'werkgever', 'werknemer', 'arbeidsovereenkomst', 'contract', 'werk', 'baan', 'functie', 'opzeggen', 'ziekte', 're-integratie', 'ziek', 'ontslagen', 'opstaan', 'bedrijf', 'werkvloer', 'cao', 'vakantie', 'uren', 'salaris', 'loon'],
+                response: 'Arbeidsrecht is één van onze specialisaties. 🏢\n\nWij helpen bij onder meer:\n\n• Ontslag en beëindigingsprocedures\n• Arbeidsovereenkomsten en contracten\n• Conflicten op de werkvloer\n• Ziekte en re-integratie\n• Arbeidsvoorwaarden en CAO\n\nWilt u een afspraak maken om uw situatie te bespreken?',
+                quickReplies: ['Contact opnemen', 'Wat kost het?', 'Hoe werkt het?']
+            },
+            {
+                id: 'asielrecht',
+                keywords: ['asiel', 'vreemdeling', 'verblijf', 'vergunning', 'naturalisatie', 'migratie', 'vluchteling', 'asielzoeker', 'familiehereniging', 'verblijfsvergunning', 'verblijfsrecht', 'immigratie', 'status', 'ind', 'uitzetting', 'terugkeer', 'documenten'],
+                response: 'Asiel- en vreemdelingenrecht is een belangrijk specialisme van ons kantoor. 🌍\n\nWij helpen bij:\n\n• Asielaanvragen en procedures\n• Verblijfsvergunningen\n• Naturalisatie en optieprocedure\n• Familiehereniging\n• Returns en uitzettingen\n\nHeeft u een specifieke vraag over asielrecht?',
+                quickReplies: ['Contact opnemen', 'Wat kost het?', 'Andere vraag']
+            },
+            {
+                id: 'verbintenissenrecht',
+                keywords: ['verbintenis', 'contract', 'overeenkomst', 'overeenkomsten', 'levering', 'wanprestatie', 'schade', 'schadevergoeding', 'koop', 'huur', 'lenen', 'lenen', 'breuk', 'niet-nakoming', 'nakoming', 'aansprakelijkheid', 'consument', 'bestelling', 'leverancier'],
+                response: 'Verbintenissenrecht gaat over overeenkomsten en contracten. 📄\n\nWij helpen bij:\n\n• Geschillen over contracten en overeenkomsten\n• Wanprestatie en niet-nakoming\n• Schadevergoeding\n• Leveringen en diensten\n• Consumentenkoop\n\nHeeft u een geschil over een overeenkomst?',
+                quickReplies: ['Contact opnemen', 'Wat kost het?', 'Hoe werkt het?']
+            },
+            {
+                id: 'contact',
+                keywords: ['contact', 'telefoon', 'email', 'e-mail', 'adres', 'bellen', 'bereiken', 'kantoor', 'postbus', 'fax', 'locatie', 'waar', 'bezoeken', 'afspraak', 'langskomen', 'kantoor'],
+                response: 'U kunt ons bereiken via: 📞\n\n• Telefoon: 034 - 34 53 979\n• E-mail: info@advocaateizenga.nl\n• Post: Postbus 112, 3958 ZV Amerongen\n• Fax: 034 - 34 539 78\n\nWij zijn bereikbaar op werkdagen van 9.00 tot 18.00 uur.',
+                quickReplies: ['Openingstijden', 'Direct bellen', 'E-mail sturen']
+            },
+            {
+                id: 'openingstijden',
+                keywords: ['openingstijd', 'open', 'gesloten', 'uur', 'tijden', 'werkdag', 'maandag', 'dinsdag', 'woensdag', 'donderdag', 'vrijdag', 'weekend', 'zaterdag', 'zondag', 'beschikbaar', 'bereikbaar', 'sluiting'],
+                response: 'Onze openingstijden zijn: 🕘\n\n• Maandag t/m vrijdag: 9.00 - 18.00 uur\n• Weekend en feestdagen: gesloten\n\nBuiten kantooruren kunt u een e-mail sturen naar info@advocaateizenga.nl — dan nemen wij de volgende werkdag contact met u op.',
+                quickReplies: ['Contact opnemen', 'E-mail sturen']
+            },
+            {
+                id: 'prijzen',
+                keywords: ['prijs', 'prijzen', 'kosten', 'tarief', 'tarieven', 'betalen', 'duur', 'schappelijk', 'gratis', 'pro bono', 'consult', 'eerste', 'consultatie', 'uurloon', 'vast', 'voorschot', 'rekening', 'factuur'],
+                response: 'Advocatenkantoor Eizenga staat bekend om schappelijke prijzen. 💶\n\n• Transparante tarieven — geen verrassingen\n• De kosten zijn afhankelijk van de complexiteit van uw zaak\n• Bij het eerste gesprek bespreken wij de verwachte kosten\n• Er zijn geen verborgen kosten\n\nNeem contact op voor een vrijblijvende kostenindicatie.',
+                quickReplies: ['Contact opnemen', 'Hoe werkt het?']
+            },
+            {
+                id: 'over',
+                keywords: ['over', 'wie', 'hans', 'eizenga', 'geschiedenis', 'ervaring', 'kantoor', 'sinds', '1984', '2003', 'achtergrond', 'advocaat', 'rechtsbijstand', 'rechtswinkel', 'bureau'],
+                response: 'Advocatenkantoor Eizenga wordt geleid door Hans (J.J.) Eizenga. ⚖️\n\n• Actief in de rechtshulp sinds 1984\n• Zelfstandig advocaat sinds 2003\n• Civielrechtelijk afgestudeerd\n• Ervaring bij rechtswinkel Utrecht, Bureau voor Rechtshulp, en Stichting Rechtsbijstand Asiel\n• Zet zich in voor kwetsbare groepen via collectieve acties\n\nOnze aanpak: eerlijk, toegankelijk, resultaatgericht.',
+                quickReplies: ['Specialisaties', 'Contact opnemen', 'Wat kost het?']
+            },
+            {
+                id: 'proces',
+                keywords: ['hoe', 'proces', 'procedure', 'werken', 'afspraak', 'stappen', 'wat nu', 'verwachting', 'verloop', 'gang', 'eerste', 'beginnen', 'starten', 'intake', 'gesprek'],
+                response: 'Hoe werkt het bij ons kantoor? 📋\n\n1. U neemt contact op (telefoon of e-mail)\n2. Wij plannen een eerste gesprek\n3. Wij bespreken uw situatie en de mogelijkheden\n4. U ontvangt een advies en een kostenindicatie\n5. Samen bepalen wij de volgende stappen\n\nHet eerste gesprek is laagdrempelig en vrijblijvend.',
+                quickReplies: ['Contact opnemen', 'Wat kost het?']
+            },
+            {
+                id: 'klacht',
+                keywords: ['klacht', 'klagen', 'ontevreden', 'bezwaar', 'klachtenregeling', 'bescherming', 'tuchtrecht', 'deken'],
+                response: 'Als u een klacht heeft, nemen wij dit serieus. 📝\n\n• U kunt uw klacht schriftelijk kenbaar maken aan ons kantoor\n• Wij beschikken over een klachtenregeling\n• Indien nodig kunt u zich wenden tot de deken van de Orde van Advocaten\n\nWij streven altijd naar een goede oplossing.',
+                quickReplies: ['Klachtenregeling', 'Contact opnemen']
+            },
+            {
+                id: 'spoed',
+                keywords: ['spoed', 'snel', 'dringend', 'nood', 'vandaag', 'direct', 'onmiddellijk', 'nu', 'belangrijk', 'deadline'],
+                response: 'Bij een spoedgeval is het belangrijk om snel te handelen. ⚡\n\n• Bel ons direct: 034 - 34 53 979\n• Buiten kantooruren kunt u een e-mail sturen — wij reageren zo snel mogelijk\n• Vermeld duidelijk dat het om een spoedgeval gaat\n\nLet op: sommige procedures hebben strikte deadlines. Wacht niet te lang met het zoeken van juridische hulp.',
+                quickReplies: ['Direct bellen', 'E-mail sturen']
+            },
+            {
+                id: 'bedankt',
+                keywords: ['bedankt', 'dank', 'dankje', 'dankuwel', 'super', 'geweldig', 'fijn', 'top', 'bedankt', 'dankjewel', 'helpful'],
+                response: 'Graag gedaan! 😊 Als u nog meer vragen heeft, stel ze gerust.\n\nU kunt ons ook altijd direct bellen op 034 - 34 53 979 of mailen naar info@advocaateizenga.nl.',
+                quickReplies: ['Nog een vraag stellen', 'Contact opnemen']
+            },
+            {
+                id: 'afscheid',
+                keywords: ['doei', 'dag', 'tot ziens', 'bye', 'afsluiten', 'sluiten', 'klaar', 'genoeg', 'hoef'],
+                response: 'Tot ziens! Wij staan altijd klaar om u te helpen. 👋\n\nBel ons gerust op 034 - 34 53 979 of stuur een e-mail naar info@advocaateizenga.nl. Succes!',
+                quickReplies: []
+            }
+        ];
+
+        const defaultResponses = [
+            'Dat is een goede vraag. Voor een specifiek antwoord op uw situatie raad ik u aan om contact op te nemen met ons kantoor. Wij helpen u graag persoonlijk verder.\n\nBel 034 - 34 53 979 of mail info@advocaateizenga.nl.',
+            'Ik ben niet helemaal zeker of ik uw vraag goed begrijp. Zou u uw vraag anders kunnen formuleren? Of neem direct contact op met ons kantoor voor persoonlijk advies.',
+            'Voor deze specifieke vraag kan ik u het beste doorverwijzen naar advocaat Eizenga. U kunt ons bereiken op 034 - 34 53 979 voor een vrijblijvend gesprek.'
+        ];
+
+        // Process user input
+        function processInput(input) {
+            const normalized = input.toLowerCase().replace(/[.,!?;:'"()]/g, '').trim();
+            const tokens = normalized.split(/\s+/);
+
+            let bestMatch = null;
+            let bestScore = 0;
+
+            for (const entry of knowledgeBase) {
+                let score = 0;
+                for (const keyword of entry.keywords) {
+                    // Exact keyword match in tokens
+                    if (tokens.includes(keyword)) {
+                        score += 2;
+                    }
+                    // Partial match — keyword is substring of a token, or vice versa
+                    for (const token of tokens) {
+                        if (token.length > 3 && keyword.length > 3) {
+                            if (token.includes(keyword) || keyword.includes(token)) {
+                                score += 1;
+                            }
+                        }
+                    }
+                }
+                if (score > bestScore) {
+                    bestScore = score;
+                    bestMatch = entry;
+                }
+            }
+
+            if (bestScore >= 1 && bestMatch) {
+                return { response: bestMatch.response, quickReplies: bestMatch.quickReplies || [] };
+            }
+
+            return { response: defaultResponses[Math.floor(Math.random() * defaultResponses.length)], quickReplies: ['Arbeidsrecht', 'Asielrecht', 'Contact opnemen'] };
+        }
+
+        // Add message to chat
+        function addBotMessage(text) {
+            const msgEl = document.createElement('div');
+            msgEl.className = 'chat-msg bot';
+            msgEl.innerHTML = `
+                <div class="chat-msg-avatar">HE</div>
+                <div class="chat-msg-bubble">${text}</div>
+            `;
+            chatMessages.appendChild(msgEl);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function addUserMessage(text) {
+            const msgEl = document.createElement('div');
+            msgEl.className = 'chat-msg user';
+            msgEl.innerHTML = `
+                <div class="chat-msg-avatar">U</div>
+                <div class="chat-msg-bubble">${text}</div>
+            `;
+            chatMessages.appendChild(msgEl);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // Typing indicator
+        function showTyping() {
+            const typingEl = document.createElement('div');
+            typingEl.className = 'chat-typing';
+            typingEl.id = 'typingIndicator';
+            typingEl.innerHTML = `
+                <div class="chat-typing-avatar">HE</div>
+                <div class="chat-typing-dots"><span></span><span></span><span></span></div>
+            `;
+            chatMessages.appendChild(typingEl);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function hideTyping() {
+            const typing = document.getElementById('typingIndicator');
+            if (typing) typing.remove();
+        }
+
+        // Quick replies
+        function showQuickReplies(replies) {
+            chatQuickReplies.innerHTML = '';
+            replies.forEach(text => {
+                const btn = document.createElement('button');
+                btn.className = 'chat-quick-btn';
+                btn.textContent = text;
+                btn.addEventListener('click', () => {
+                    handleUserInput(text);
+                    chatQuickReplies.innerHTML = '';
+                });
+                chatQuickReplies.appendChild(btn);
+            });
+        }
+
+        // Handle user input
+        function handleUserInput(text) {
+            if (!text.trim()) return;
+
+            addUserMessage(text);
+            chatInput.value = '';
+            chatQuickReplies.innerHTML = '';
+
+            // Show typing indicator
+            showTyping();
+
+            // Simulate thinking delay
+            const delay = 600 + Math.random() * 800;
+            setTimeout(() => {
+                hideTyping();
+                const result = processInput(text);
+                addBotMessage(result.response);
+                if (result.quickReplies.length > 0) {
+                    showQuickReplies(result.quickReplies);
+                }
+            }, delay);
+        }
+
+        // Send on button click
+        chatSend.addEventListener('click', () => handleUserInput(chatInput.value));
+
+        // Send on Enter
+        chatInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                handleUserInput(chatInput.value);
+            }
+        });
+
+        // Register chat elements with cursor
+        document.querySelectorAll('.chat-toggle, .chat-panel, .chat-send, .chat-quick-btn, .chat-input').forEach(el => {
+            el.addEventListener('mouseenter', () => ring.classList.add('hovering'));
+            el.addEventListener('mouseleave', () => ring.classList.remove('hovering'));
+        });
+    </script>
+</body>
+</html>
